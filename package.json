@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsup src",
     "dev": "tsx watch src/server.ts",
@@ -27,6 +30,7 @@
     "dotenv": "^16.3.1",
     "fastify": "^4.22.0",
     "knex": "^2.5.1",
+    "pg": "^8.11.3",
     "sqlite3": "^5.1.6",
     "supertest": "^6.3.3",
     "vitest": "^0.34.3",
