@@ -31,7 +31,8 @@ describe('Transactions routes', () => {
       .send({
         title: 'New Transaction',
         amount: 5000,
-        type: 'credit',
+        type: 'income',
+        category: 'Sei la',
       })
       .expect(201)
   })
@@ -42,7 +43,8 @@ describe('Transactions routes', () => {
       .send({
         title: 'New Transaction',
         amount: 5000,
-        type: 'credit',
+        type: 'income',
+        category: 'Sei la',
       })
     const cookies = createTransactionResponse.get('Set-Cookie')
 
@@ -65,7 +67,8 @@ describe('Transactions routes', () => {
       .send({
         title: 'New Transaction',
         amount: 5000,
-        type: 'credit',
+        type: 'income',
+        category: 'Sei la',
       })
     const cookies = createTransactionResponse.get('Set-Cookie')
 
@@ -93,9 +96,10 @@ describe('Transactions routes', () => {
     const createTransactionResponse = await request(app.server)
       .post('/transactions')
       .send({
-        title: 'Credit Transaction',
+        title: 'New Transaction',
         amount: 5000,
-        type: 'credit',
+        type: 'income',
+        category: 'Sei la',
       })
     const cookies = createTransactionResponse.get('Set-Cookie')
 
@@ -103,9 +107,10 @@ describe('Transactions routes', () => {
       .post('/transactions')
       .set('Cookie', cookies)
       .send({
-        title: 'Debit Transaction',
-        amount: 2000,
-        type: 'debit',
+        title: 'New Transaction',
+        amount: 5000,
+        type: 'income',
+        category: 'Sei la',
       })
 
     const summaryResponse = await request(app.server)
